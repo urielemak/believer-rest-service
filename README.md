@@ -1,4 +1,4 @@
-# Spring Boot Beliver REST service
+# Spring Boot Believer REST service
 
 This is a Spring Boot service example for believers crud operations.
 
