@@ -46,7 +46,7 @@ public record BelieverController(
     @ApiResponses(value = {
 	@ApiResponse(responseCode = "201", description = "Beliver successfully created"),
 	@ApiResponse(responseCode = "409", description = "Believer already exists"),
-	@ApiResponse(responseCode = "500", description = "Huhandled exception")
+	@ApiResponse(responseCode = "500", description = "Unhandled exception")
     })
     @PostMapping("/believer")
     public ResponseEntity<HttpStatus> create(@RequestBody Believer believer){
