@@ -1,9 +1,9 @@
 package github.urielemak.eva.believer.service;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-
-import java.util.Optional;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -33,12 +33,9 @@ public class BelieverCreatorTest {
 	public void should_create_a_believer(){
 	    var expectedBeliever = FakeBeliever.random();
 
-	    Mockito
-		.when(repository.findById(expectedBeliever.id()))
-		.thenReturn(Optional.of(expectedBeliever));
+	    creator.create(expectedBeliever);
 
-	    var believerReturned = repository.findById(expectedBeliever.id()).get();
-	    assertEquals(believerReturned, expectedBeliever);
+	    verify(repository, times(1)).save(any());
 	}
 
 	public void should_throw_a_exception_if_believer_already_exists(){
