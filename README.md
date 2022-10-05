@@ -4,6 +4,8 @@ This is a Spring Boot service example for believers crud operations.
 
 This project was made for learning purposes but you are free to use it. This project uses Swagger for API documentation, so you will find all the documentation by doing all the following steps. 
 
+![Swagger documentation screenshot](https://raw.githubusercontent.com/urielemak/believer-rest-service/main/src/main/resources/documentation/believer-service-doc-sreenshot.png)
+
 ## Requirements
 Make sure you have installed this packages:
 
