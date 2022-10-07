@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
 import github.urielemak.eva.believer.domain.BelieverAlreadyExistsException;
+import github.urielemak.eva.believer.domain.BelieverNotFoundException;
 
 @ControllerAdvice
 public class BelieverExceptionsHandler {
@@ -21,6 +22,15 @@ public class BelieverExceptionsHandler {
 	return ResponseEntity
 	    .status(HttpStatus.CONFLICT)
 	    .body(error("CONFLICT", exception.getMessage()));
+    }
+
+    @ExceptionHandler(BelieverNotFoundException.class)
+    public ResponseEntity<String> handleBelieverNotFound(
+	    BelieverNotFoundException excetpion)
+    {
+	return ResponseEntity
+	    .status(HttpStatus.NOT_FOUND)
+	    .body(error("NOT FOUND", excetpion.getMessage()));
     }
 
 }
