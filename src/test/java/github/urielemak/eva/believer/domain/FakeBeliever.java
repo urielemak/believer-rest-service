@@ -4,6 +4,7 @@ import java.time.Instant;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
+import java.util.UUID;
 
 import com.github.javafaker.Faker;
 
@@ -15,7 +16,7 @@ public class FakeBeliever {
 	var birth = faker.date().birthday();
 
 	return Believer.builder()
-	    .id(faker.number().randomNumber())
+	    .id(UUID.randomUUID().toString())
 	    .name(faker.name().firstName())
 	    .lastName(faker.name().lastName())
 	    .email(faker.internet().emailAddress())
@@ -25,7 +26,7 @@ public class FakeBeliever {
 
     public static Believer randomWithBirth(LocalDate birth){
 	return Believer.builder()
-	    .id(faker.number().randomNumber())
+	    .id(UUID.randomUUID().toString())
 	    .name(faker.name().firstName())
 	    .lastName(faker.name().lastName())
 	    .email(faker.internet().emailAddress())

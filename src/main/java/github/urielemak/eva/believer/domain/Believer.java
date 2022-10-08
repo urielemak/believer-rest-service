@@ -27,7 +27,7 @@ public class Believer {
 
     @Id
     @JsonProperty
-    private Long id;
+    private String id;
 
     @JsonProperty
     private String name;

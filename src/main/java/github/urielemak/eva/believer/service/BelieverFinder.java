@@ -13,7 +13,7 @@ import github.urielemak.eva.believer.infraestructure.BelieverRepository;
 @Service
 public record BelieverFinder(BelieverRepository repository) {
 
-    public Optional<Believer> byId(Long id){
+    public Optional<Believer> byId(String id){
 	if(!repository.existsById(id)){
 	    var errorMsg = String.format("Believer with id %s not found", id);
 	    throw new BelieverNotFoundException(errorMsg);

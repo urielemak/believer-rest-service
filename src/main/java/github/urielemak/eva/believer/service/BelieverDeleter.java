@@ -10,7 +10,7 @@ import lombok.extern.slf4j.Slf4j;
 @Service
 public record BelieverDeleter(BelieverRepository repository) {
 
-    public void byId(Long id){
+    public void byId(String id){
 	if(!repository.existsById(id)){
 	    String error = String.format("Believer by id %s does not exists", id);
 	    log.warn(error);

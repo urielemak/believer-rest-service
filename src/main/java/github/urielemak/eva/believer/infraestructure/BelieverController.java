@@ -64,7 +64,7 @@ public record BelieverController(
 	@ApiResponse(responseCode = "500", description = "Unhandled excption")
     })
     @DeleteMapping("/believer/{id}")
-    public ResponseEntity<HttpStatus> delete(@PathVariable("id") Long believerId){
+    public ResponseEntity<HttpStatus> delete(@PathVariable("id") String believerId){
 	this.deleter.byId(believerId);
 	return ResponseEntity.status(HttpStatus.OK).build();
     }
@@ -74,7 +74,7 @@ public record BelieverController(
 	@ApiResponse(responseCode = "200", description = "Boolean successfully returned")
     })
     @GetMapping("/believer/{id}/ishisbirthday")
-    public boolean isHisBirthday(@PathVariable("id") Long believerId){
+    public boolean isHisBirthday(@PathVariable("id") String believerId){
 	var believer = this.finder.byId(believerId).get();
 	var today = LocalDate.now();
 	return believer.isHisBirthday(today);

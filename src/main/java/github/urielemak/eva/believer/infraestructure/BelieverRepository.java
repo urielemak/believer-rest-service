@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 import github.urielemak.eva.believer.domain.Believer;
 
 @Repository
-public interface BelieverRepository extends JpaRepository<Believer, Long>{
+public interface BelieverRepository extends JpaRepository<Believer, String>{
 
     @Query("SELECT b FROM Believer as b WHERE b.birth BETWEEN :from AND :to")
     public List<Believer> allFrom(
